@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: $--gap-large;
+  padding: 64px;
+  min-height: 551px;
+  backdrop-filter: blur(20px);
+  background:$--background-tranparent-auth;
+  box-shadow: $--box-shadow-default;
+  border-radius: $--border-radius-default;
+  :global {
+    .ant-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .ant-form-item{
+      margin-bottom: 0px;
+    }
+    .ant-menu-horizontal{
+      margin-top: 48px;
+      background: transparent;
+    }
+  }
+  &__navigation{
+    & > li {
+      width: 50%;
+      text-align: center;
+      font-size: $--font-size-large;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .login {
+    padding: 64px 32px;
+    :global{
+      .ant-menu-horizontal{
+        margin-top: 0;
+      }
+    }
+  }
+}

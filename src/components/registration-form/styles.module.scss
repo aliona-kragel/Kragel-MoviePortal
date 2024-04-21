@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.form {
+  .fields{
+    display: flex;
+    flex-direction: column;
+    gap: $--gap-xlarge;
+    margin-bottom: 64px;
+    :global{
+      .ant-form-item-explain-error{
+        position: absolute;
+      }
+      input,
+      .ant-input-affix-wrapper,
+      .ant-input-status-success,
+      .ant-input-affix-wrapper:hover,
+      .ant-input-outlined:hover,
+      .ant-input-status-error{
+        background: transparent;
+      }
+    }
+  } 
+}
