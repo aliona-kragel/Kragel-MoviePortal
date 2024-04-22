@@ -12,7 +12,7 @@ export const AuthLayout: FC = () => {
   let [searchParams] = useSearchParams();
 
   useEffect(() => {
-    if (window.location.href === "http://localhost:3000/") {
+    if (window.location.href === "http://localhost:3000/" || window.location.href === "https://aliona-kragel.github.io/Kragel-MoviePortal/") {
       navigate(Paths.AUTH);
     }
   }, [navigate]);

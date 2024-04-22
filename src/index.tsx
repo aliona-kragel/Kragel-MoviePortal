@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { history, store } from './store/configure-store';
-import { HistoryRouter } from "redux-first-history/rr6";
+import { store } from './store/configure-store';
 import { routes } from './router';
 
 import "./styles/styles.module.scss"
+import { RouterProvider } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HistoryRouter history={history}>{routes}</HistoryRouter>
+      <RouterProvider router={routes} />
     </Provider>
   </React.StrictMode>,
 );

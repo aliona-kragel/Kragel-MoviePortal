@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, createHashRouter, createRoutesFromElements } from "react-router-dom";
 import { PublicRoutes } from "./public-routes";
 import { AuthLayout } from "../layouts/auth-layout/auth-layout";
 import { MainLayout } from "../layouts/main-layout/main-layout";
@@ -8,8 +8,8 @@ import { LoginForm } from "../components/login-form/login-form";
 import { RegistrationForm } from "../components/registration-form";
 import { MainPage } from "../pages/main-page/main-page";
 
-export const routes = (
-  <Routes>
+export const routes = createHashRouter(createRoutesFromElements(
+  <>
     <Route path="/" element={<MainLayout />}>
       <Route path={Paths.MAIN} element={<MainPage />} />
     </Route >
@@ -21,5 +21,5 @@ export const routes = (
         </Route>
       </Route>
     </Route>
-  </Routes>
-)
+  </>
+))

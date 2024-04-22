@@ -1,10 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query'
 import commonSlice from './slices/commonSlice';
-import { createBrowserHistory } from 'history';
 import { moviesApi } from '../services';
-
-export const history = createBrowserHistory();
 
 export const store = configureStore({
   reducer: {
