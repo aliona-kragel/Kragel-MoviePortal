@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Kragel-MoviePortal/static/css/main.44bae902.css",
-    "main.js": "/Kragel-MoviePortal/static/js/main.773dc525.js",
+    "main.js": "/Kragel-MoviePortal/static/js/main.95184bad.js",
     "index.html": "/Kragel-MoviePortal/index.html",
     "main.44bae902.css.map": "/Kragel-MoviePortal/static/css/main.44bae902.css.map",
-    "main.773dc525.js.map": "/Kragel-MoviePortal/static/js/main.773dc525.js.map"
+    "main.95184bad.js.map": "/Kragel-MoviePortal/static/js/main.95184bad.js.map"
   },
   "entrypoints": [
     "static/css/main.44bae902.css",
-    "static/js/main.773dc525.js"
+    "static/js/main.95184bad.js"
   ]
 }
