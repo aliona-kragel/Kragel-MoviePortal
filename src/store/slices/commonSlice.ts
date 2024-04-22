@@ -7,7 +7,6 @@ const initialState: CommonTypes = {
     password: ""
   },
   isLoggedIn: null,
-  accessToken: null,
 };
 
 const commonSlice = createSlice({

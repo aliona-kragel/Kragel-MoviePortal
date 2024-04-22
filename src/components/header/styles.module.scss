@@ -1,10 +1,15 @@
 @import "../../styles/variables.scss";
 .header{
   display: flex;
+  width: 100%;
   justify-content: space-between;
   padding: 16px 48px;
   backdrop-filter: blur(20px);
   background: $--background-tranparent-main;
   box-shadow:$--box-shadow-default;
   border-radius: $--border-radius-default;
+  .navigation{
+    display: flex;
+    gap: $--gap-xlarge;
+  }
 }

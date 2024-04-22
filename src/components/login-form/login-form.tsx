@@ -24,6 +24,8 @@ export const LoginForm: FC = () => {
         localStorage.setItem(ACCESS_TOKEN, ACCESS_TOKEN_RANDOM_VALUE);
         setLoggedIn(true);
         navigate(Paths.MAIN);
+      } else {
+        setShowErrorModal(true)
       }
     } else {
       setShowErrorModal(true)

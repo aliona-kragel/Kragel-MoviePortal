@@ -7,7 +7,7 @@ export const moviesApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_API_URL }),
   endpoints: (builder) => ({
     getMovies: builder.query<ResponceListType, GetMoviesParams>({
-      query: ({ page = 1, limit = 10 }) =>
+      query: ({ page, limit }) =>
         `/?apikey=${API_KEY}&s=series&page=${page}&limit=${limit}`,
     }),
   }),

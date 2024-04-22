@@ -30,7 +30,7 @@ export const SuccessModal: FC<DefaultModalProps> = ({ open, setOpen }) => {
         title="Регистрация успешна"
         subTitle="Регистрация прошла успешно. Зайдите в приложение, используя свои e-mail и пароль."
         icon={<SmileOutlined />}
-        extra={[
+        extra={
           <Button
             type="primary"
             size="large"
@@ -39,7 +39,7 @@ export const SuccessModal: FC<DefaultModalProps> = ({ open, setOpen }) => {
           >
             Войти
           </Button>
-        ]}
+        }
       />
     </Modal>
   )

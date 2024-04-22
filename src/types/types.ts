@@ -41,7 +41,6 @@ export type CommonTypes = {
     password: string
   },
   isLoggedIn: boolean | null;
-  accessToken: string | null,
 }
 
 export type UserDataTypes = {

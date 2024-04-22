@@ -21,9 +21,9 @@ export const ErrorModal: FC<DefaultModalProps> = ({ open, setOpen }) => {
     >
       <Result
         title="Что-то пошло не так"
-        subTitle="Неверный пароль или пользователь не зарегистрирован. Попробуйте еще раз"
+        subTitle="Неверный логин или пароль. Возможно такой пользователь не зарегистрирован. Попробуйте еще раз"
         icon={<FrownOutlined />}
-        extra={[
+        extra={
           <Button
             type="primary"
             size="large"
@@ -32,7 +32,7 @@ export const ErrorModal: FC<DefaultModalProps> = ({ open, setOpen }) => {
           >
             Попробовать еще раз
           </Button>
-        ]}
+        }
       />
     </Modal>
   )
