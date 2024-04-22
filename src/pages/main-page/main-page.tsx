@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 
 export const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const limit = 12;
+  const limit = 10;
   const { data, isLoading } = useGetMoviesQuery({ page: currentPage, limit });
   const totalPages = Math.ceil(Number(data?.totalResults) / limit);
 
