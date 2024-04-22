@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.link{
+  width: 100%;
+  display: flex;
+  font-size: $--font-size-large;
+  align-items: center;
+  justify-content:  space-evenly;
+  transition:  border-bottom 0.3s ease-in-out;
+  color: $--secondary-color;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  &:hover{
+    border-bottom: 2px solid $--secondary-color;
+  }
+}
+.active{
+  border-bottom: 2px solid $--secondary-color;
+}
+
