@@ -34,10 +34,10 @@ export const ProfileInfo = () => {
     <div className={styles.profile}>
       <div className={styles.user}>
         <span className={styles.email}>{userData.email}</span>
-        <Avatar icon={<UserOutlined style={{ color: "#4096ff" }} />} />
+        <Avatar icon={<UserOutlined style={{ color: "#69b1ff" }} />} />
       </div >
-      <Button type="text" onClick={onLogoutClick}>
-        <LogoutOutlined style={{ fontSize: 24, color: "#4096ff" }} />
+      <Button type="text" onClick={onLogoutClick} style={{ padding: "4px" }}>
+        <LogoutOutlined style={{ fontSize: 24, color: "#69b1ff" }} />
       </Button>
     </div>
   )

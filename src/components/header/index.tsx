@@ -8,8 +8,7 @@ import { useAppSelector } from "../../hooks/use-app-selector";
 
 export const Header = () => {
   const token = localStorage.getItem(ACCESS_TOKEN);
-  const { isLoggedIn } = useAppSelector(state => state.common)
-
+  const { isLoggedIn } = useAppSelector(state => state.common);
 
   return (
     <header className={styles.header}>

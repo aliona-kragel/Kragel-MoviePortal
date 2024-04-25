@@ -17,14 +17,14 @@ export const HeaderControls: FC = () => {
         size="large"
         onClick={onSignInClick}
       >
-        Sign in
+        Войти
       </Button>
       <Button
         type="primary"
         size="large" ghost
         onClick={onSignUpClick}
       >
-        Sign up
+        Регистрация
       </Button>
     </div>
   )

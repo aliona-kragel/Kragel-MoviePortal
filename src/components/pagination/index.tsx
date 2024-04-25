@@ -9,9 +9,9 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({ totalPages,
   const getDisabledButtonStyles = (isDisabled: boolean) => {
     return {
       fontSize: "16px",
-      color: isDisabled ? 'white' : 'none',
+      color: isDisabled ? '#69b1ff' : 'none',
       fontWeight: isDisabled ? '700' : 'normal',
-      borderColor: isDisabled ? 'white' : 'none',
+      borderColor: isDisabled ? '#69b1ff' : 'none',
     };
   };
 

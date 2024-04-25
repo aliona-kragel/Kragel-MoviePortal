@@ -13,3 +13,9 @@
     }
   }
 }
+
+@media(max-width:768px){
+  .profile{
+    gap: $--gap-tiny;
+  }
+}

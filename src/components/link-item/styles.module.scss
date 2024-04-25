@@ -9,12 +9,14 @@
   color: $--secondary-color;
   text-decoration: none;
   padding-bottom: 5px;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   &:hover{
-    border-bottom: 1px solid $--secondary-color;
+    color: $--main-color;
+    transition: all 0.3s ease-in-out;
   }
 }
 .active{
-  border-bottom: 1px solid $--secondary-color;
+  border-bottom: 2px solid $--main-color;
+  color: $--main-color;
 }
 
