@@ -1,18 +1,39 @@
+import { FC, PropsWithChildren, useState } from 'react';
 import { Card } from 'antd';
-import { FC, PropsWithChildren } from 'react';
-import { MovieCardPrors, MovieListType } from '../../types/types';
+import { EyeOutlined } from '@ant-design/icons';
+import { MovieCardPrors } from '../../types/types';
+import useWindowResize from '../../hooks/use-window-resize';
+import { Rating } from '../rating';
+
+import styles from "./styles.module.scss"
 
 const { Meta } = Card;
 
 export const MovieCard: FC<PropsWithChildren<MovieCardPrors>> = ({ data }) => {
+  const [hovered, setHovered] = useState(false);
+  const { isFullscreen } = useWindowResize();
+
   return (
     <Card
       hoverable
-      style={{ width: 240 }}
-      cover={<img alt="example" src={data.Poster} />}
-      styles={{ body: { background: "rgb(255, 255, 255, 0.2)" } }}
+      className={styles.card}
+      styles={{ body: { padding: "16px" } }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      cover={
+        <img alt={data.nameOriginal}
+          src={data.posterUrlPreview}
+          style={{ height: isFullscreen ? 300 : "auto" }} />
+      }
     >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
-    </Card>
+      {hovered && (
+        <div className={styles.overlay}>
+          <EyeOutlined style={{ color: "#69b1ff", fontSize: 64 }} />
+        </div>
+      )}
+      <Meta
+        title={data.nameRu || data.nameOriginal}
+        description={<Rating rating={data.ratingKinopoisk || data.ratingImdb} value={(data.ratingKinopoisk || data.ratingImdb) / 2} count={5} />} />
+    </Card >
   )
 }
