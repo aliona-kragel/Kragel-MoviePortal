@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { CommonTypes, UserDataTypes } from "../../types/types";
+import { CommonSliceTypes, UserDataTypes } from "../../types/types";
 
-const initialState: CommonTypes = {
+const initialState: CommonSliceTypes = {
   userData: {
     email: "",
     password: ""

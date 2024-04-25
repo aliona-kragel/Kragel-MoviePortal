@@ -1,0 +1,18 @@
+@import "../../styles/variables.scss";
+
+.search{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  :global{ 
+    input,
+    .ant-input-affix-wrapper,
+    .ant-input-status-success,
+    .ant-input-affix-wrapper:hover,
+    .ant-input-outlined:hover,
+    .ant-input-status-error,
+    .ant-input-group-addon{
+      background-color: $--background-tranparent-main;
+    }
+  }
+}
