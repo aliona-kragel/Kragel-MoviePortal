@@ -17,7 +17,6 @@ export const ProfileInfo = () => {
       const userData = JSON.parse(localStorageData)
       setUserData(userData)
     };
-    console.log(userData);
   }, [localStorageData])
 
   const onLogoutClick = () => {
