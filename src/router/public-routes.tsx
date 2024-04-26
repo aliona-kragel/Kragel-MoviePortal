@@ -4,10 +4,9 @@ import { useAppSelector } from "../hooks/use-app-selector";
 import { ACCESS_TOKEN, Paths } from "../constants";
 
 const useAuth = () => {
-  const { isLoggedIn } = useAppSelector(state => state.common)
   const token = localStorage.getItem(ACCESS_TOKEN);
 
-  if (token || isLoggedIn) {
+  if (token) {
     return true;
   } else {
     return false;

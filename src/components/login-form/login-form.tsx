@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Form, Input } from "antd";
 import { LoginDataTypes } from "../../types/types";
-import useCommonActions from "../../hooks/use-common-actions";
 import { ACCESS_TOKEN, ACCESS_TOKEN_RANDOM_VALUE, Paths, USER_DATA } from "../../constants";
 import { ErrorModal } from "../error-modal";
 
@@ -10,7 +9,6 @@ import styles from "./styles.module.scss";
 
 export const LoginForm: FC = () => {
   const [showErrorModal, setShowErrorModal] = useState(false);
-  const { setLoggedIn } = useCommonActions();
   const [form] = Form.useForm();
   const navigate = useNavigate();
 
@@ -22,7 +20,6 @@ export const LoginForm: FC = () => {
       const userData = JSON.parse(localStorageData)
       if (email === userData.email && password === userData.password) {
         localStorage.setItem(ACCESS_TOKEN, ACCESS_TOKEN_RANDOM_VALUE);
-        setLoggedIn(true);
         navigate(Paths.MAIN);
       } else {
         setShowErrorModal(true)

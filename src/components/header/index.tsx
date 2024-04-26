@@ -8,7 +8,6 @@ import { useAppSelector } from "../../hooks/use-app-selector";
 
 export const Header = () => {
   const token = localStorage.getItem(ACCESS_TOKEN);
-  const { isLoggedIn } = useAppSelector(state => state.common);
 
   return (
     <header className={styles.header}>
@@ -16,7 +15,7 @@ export const Header = () => {
         <Logo />
         <NavMenu />
       </div>
-      {token || isLoggedIn ? <ProfileInfo /> : <HeaderControls />}
+      {token ? <ProfileInfo /> : <HeaderControls />}
     </header>
   )
 }

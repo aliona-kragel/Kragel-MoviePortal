@@ -6,7 +6,6 @@ const initialState: CommonSliceTypes = {
     email: "",
     password: ""
   },
-  isLoggedIn: null,
 };
 
 const commonSlice = createSlice({
@@ -15,9 +14,6 @@ const commonSlice = createSlice({
   reducers: {
     setUserData: (state, action: PayloadAction<UserDataTypes>) => {
       state.userData = action.payload;
-    },
-    setLoggedIn: (state, action: PayloadAction<boolean>) => {
-      state.isLoggedIn = action.payload;
     },
   }
 })
