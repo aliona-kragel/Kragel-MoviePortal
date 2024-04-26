@@ -1,41 +1,52 @@
-import { useState } from "react";
-import { MovieCard } from "../../components/movie-card";
-import { useGetMoviesQuery } from "../../services";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
 import { Button } from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import useMovieActions from "../../hooks/use-movie-actions";
+import { useAppSelector } from "../../hooks/use-app-selector";
 import { Pagination } from "../../components/pagination";
 import { Loader } from "../../components/loader";
+import { MovieList } from "../../components/movie-list";
+import { SearchField } from "../../components/search-field";
+import { useGetMoviesQuery } from "../../services";
+import { REQUEST_LIMIT } from "../../constants";
 
 import styles from "./styles.module.scss";
 
 export const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const limit = 10;
-  const { data, isLoading } = useGetMoviesQuery({ page: currentPage, limit });
-  const totalPages = Math.ceil(Number(data?.totalResults) / limit);
+  const { setMovieList, setIsDataLoading } = useMovieActions();
+  const { movieList, isDataLoading } = useAppSelector(state => state.movie);
+  const { data, isLoading } = useGetMoviesQuery({ page: currentPage });
+  const totalPages = Math.ceil(Number(movieList?.total) / REQUEST_LIMIT);
+
+  useEffect(() => {
+    setMovieList(data);
+    setIsDataLoading(isLoading);
+  }, [data, isLoading])
 
   const handlePageChange = (page: number) => setCurrentPage(page);
 
   return (
-    <div className={styles.main}>
-      {isLoading ?
+    <section className={styles.main}>
+      <SearchField currentPage={currentPage} />
+      {isDataLoading ?
         <Loader /> :
         <>
-          <div className={styles.cards} >
-            {data && data.Search.map((item) => <MovieCard key={item.imdbID} data={item} />)
-            }
-          </div >
+          <MovieList />
           <div className={styles.pagination}>
-            <Button type="text" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-              <LeftOutlined />
-            </Button>
-            <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
-            <Button type="text" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-              <RightOutlined />
-            </Button>
+            {(movieList && movieList?.total >= 20) &&
+              <>
+                <Button type="text" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+                  <LeftOutlined />
+                </Button>
+                <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
+                <Button type="text" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                  <RightOutlined />
+                </Button>
+              </>}
           </div>
-        </>}
-    </div>
-
+        </>
+      }
+    </section>
   );
 }

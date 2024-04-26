@@ -1,20 +1,18 @@
 @import "../../styles/variables.scss";
 .main{
   display: flex;
+  min-height: calc(100vh - 180px);
+  width: 100%;
   flex-direction: column;
   gap: $--gap-large;
-  align-items: center;
+  :global{
+    .ant-spin-container > .ant-row{
+      margin-right:0 !important;
+      margin-left: 0 !important;
+    }
+  }
 }
-
-.cards{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: $--gap-medium;
-  overflow: auto;
-  height: calc(100vh - 230px);
-}
-
 .pagination{
   display: flex;
+  justify-content: center;
 }
