@@ -8,7 +8,9 @@ export const MainLayout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (window.location.href === "http://localhost:3000/") {
+    const isLocalhost = "http://localhost:3000/Kragel-MoviePortal";
+    const isGitHubPages = "https://aliona-kragel.github.io/Kragel-MoviePortal/";
+    if (window.location.href === isLocalhost || window.location.href === isGitHubPages) {
       navigate(Paths.MAIN);
     }
   }, []);
