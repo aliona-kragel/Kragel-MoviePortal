@@ -3,6 +3,7 @@
 .login {
   display: flex;
   flex-direction: column;
+  max-width: 530px;
   width: 50%;
   gap: $--gap-large;
   padding: 64px;
@@ -32,9 +33,20 @@
     }
   }
 }
-
+@media (max-width: 920px) {
+  .login {
+    width: 70%;
+    padding: 64px 32px;
+    :global{
+      .ant-menu-horizontal{
+        margin-top: 0;
+      }
+    }
+  }
+}
 @media (max-width: 680px) {
   .login {
+    width: 90%;
     padding: 64px 32px;
     :global{
       .ant-menu-horizontal{
