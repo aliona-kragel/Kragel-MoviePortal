@@ -2,12 +2,13 @@ export const Paths = {
   AUTH: "/auth",
   REGISTRATION: "/registration",
   MAIN: "/main",
-  FAVOURIVES: "/favourites",
+  FAVORIVES: "/favorites",
   DETAILS: "/details",
   NOT_FOUND: "/not-found",
 }
 
 export const ACCESS_TOKEN = "accessToken";
+export const FAVORITES = "favorites";
 export const ACCESS_TOKEN_RANDOM_VALUE = "3fsdiufn84hc3ik4w49ztfhlmw4mzok8";
 export const USER_DATA = "userData";
 

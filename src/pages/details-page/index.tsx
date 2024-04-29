@@ -15,7 +15,7 @@ export const DetailsPage: FC = () => {
   const { data: detailsData, isLoading } = useGetMovieDetailsQuery({ selectedMovieID });
   const navigate = useNavigate();
 
-  const handleBackClick = () => navigate(Paths.MAIN);
+  const handleBackClick = () => navigate(-1);
 
   return (
     <section className={styles.details}>

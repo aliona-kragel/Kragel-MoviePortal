@@ -1,17 +1,18 @@
 import { FC } from "react";
 import { Tag } from "antd";
-import { MovieInfoProps } from "../../types/types";
+import { FavMovieData, MovieInfoProps } from "../../types/types";
 import { useGetStaffDetailsQuery } from "../../services";
 import { useAppSelector } from "../../hooks/use-app-selector";
 import { getStaffNames } from "../../helpers";
 import { Rating } from "../rating";
+import { LikeButton } from "../like-button";
 
 import styles from "./styles.module.scss";
 
 export const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
   const { selectedMovieID } = useAppSelector(state => state.movie);
   const { data: staffData } = useGetStaffDetailsQuery({ selectedMovieID });
-  const { countries, genres, ratingAgeLimits, ratingKinopoisk, ratingImdb, shortDescription, description, posterUrl, year, nameOriginal } = detailsData || {};
+  const { countries, genres, ratingAgeLimits, ratingKinopoisk, ratingImdb, shortDescription, description, posterUrl, year, nameOriginal, nameRu } = detailsData || {};
 
   const countryValue = countries.map(el => el.country);
   const genreValue = genres.map(el => el.genre);
@@ -52,6 +53,14 @@ export const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
       id: 6,
     },
   ]
+  const favMovieData: FavMovieData = {
+    id: selectedMovieID,
+    name: nameOriginal || nameRu,
+    poster: posterUrl,
+    rating: ratingKinopoisk || ratingImdb,
+    desc: shortDescription || description
+  }
+
   const filteredMovieDetails = movieDetails.filter(detail => {
     if (detail.value === undefined) return false;
 
@@ -70,6 +79,7 @@ export const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
           alt={nameOriginal}
         />
         <Rating rating={ratingKinopoisk || ratingImdb} count={10} value={ratingKinopoisk || ratingImdb} />
+        <LikeButton data={favMovieData} />
       </div>
       <div className={styles.resume}>
         {filteredMovieDetails.map(el => (

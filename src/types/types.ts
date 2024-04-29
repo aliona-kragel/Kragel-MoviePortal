@@ -159,3 +159,13 @@ export type LoginDataTypes = {
   email: string,
   password: string,
 }
+export type FavMovieData = {
+  id: number | null,
+  name: string,
+  poster: string,
+  rating: number,
+  desc: string | null
+}
+export type LikedMovie = {
+  data: FavMovieData
+}

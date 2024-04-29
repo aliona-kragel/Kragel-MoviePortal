@@ -9,12 +9,14 @@ import { RegistrationForm } from "../components/registration-form";
 import { MainPage } from "../pages/main-page/main-page";
 import { DetailsPage } from "../pages/details-page";
 import { NotFoundPage } from "../pages/not-found-page";
+import { FavoritesPage } from "../pages/favorites-page";
 
 export const routes = createHashRouter(createRoutesFromElements(
   <>
     <Route path="/" element={<MainLayout />}>
       <Route path={Paths.MAIN} element={<MainPage />} />
       <Route path={Paths.DETAILS} element={<DetailsPage />} />
+      <Route path={Paths.FAVORIVES} element={<FavoritesPage />} />
       <Route path="*" element={<Navigate to={Paths.NOT_FOUND} />} />
       <Route path={Paths.NOT_FOUND} element={<NotFoundPage />} />
     </Route >

@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+.favourites{
+  display: flex;
+  min-height: calc(100vh - 180px);
+  width: 100%;
+  flex-direction: column;
+  gap: $--gap-large;
+  .list{
+    min-height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    :global{
+      .ant-pagination .ant-pagination-item-active {
+        background-color: transparent;
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ export const NavMenu = () => {
       <LinkItem to={Paths.MAIN}>
         {width >= 768 ? <span>Главная</span> : <HomeFilled />}
       </LinkItem>
-      <LinkItem to={Paths.FAVOURIVES}>
+      <LinkItem to={Paths.FAVORIVES}>
         {width >= 768 ? <span>Избранное</span> : <HeartFilled />}
       </LinkItem>
     </div>
