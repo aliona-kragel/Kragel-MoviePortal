@@ -9,6 +9,7 @@ import { MovieList } from "../../components/movie-list";
 import { SearchField } from "../../components/search-field";
 import { useGetMoviesQuery } from "../../services";
 import { REQUEST_LIMIT } from "../../constants";
+import { TagFilter } from "../../components/tag-filter";
 
 import styles from "./styles.module.scss";
 
@@ -28,12 +29,15 @@ export const MainPage = () => {
 
   return (
     <section className={styles.main}>
-      <SearchField currentPage={currentPage} />
+      <div className={styles.header}>
+        <TagFilter currentPage={currentPage} />
+        <SearchField currentPage={currentPage} />
+      </div>
       {isDataLoading ?
         <Loader /> :
         <>
           <MovieList />
-          <div className={styles.pagination}>
+          {!isDataLoading && <div className={styles.pagination}>
             {(movieList && movieList?.total >= 20) &&
               <>
                 <Button type="text" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
@@ -44,7 +48,7 @@ export const MainPage = () => {
                   <RightOutlined />
                 </Button>
               </>}
-          </div>
+          </div>}
         </>
       }
     </section>

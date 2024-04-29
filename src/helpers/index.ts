@@ -6,3 +6,26 @@ export const getStaffNames = (staffData: MovieStaffTypes[] | undefined, professi
     .map(el => el.nameRu)
     .slice(0, limit);
 };
+
+export const allowedFilterList = [
+  {
+    key: "ALL",
+    name: "все"
+  },
+  {
+    key: "FILM",
+    name: "фильмы"
+  },
+  {
+    key: "TV_SHOW",
+    name: "шоу"
+  },
+  {
+    key: "TV_SERIES",
+    name: "сериалы"
+  },
+  {
+    key: "MINI_SERIES",
+    name: "мини-сериалы"
+  },
+]

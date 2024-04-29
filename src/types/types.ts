@@ -106,7 +106,12 @@ export type GetMovieDetailsParams = {
   selectedMovieID: number | null
 }
 export type GetMoviesByNameParams = {
-  searchString: string
+  searchString: string,
+  page: number
+}
+export type GetMoviesByTypeParams = {
+  type: string,
+  page: number
 }
 export type DefaultModalProps = {
   open: boolean,
@@ -122,7 +127,7 @@ export type MovieInfoProps = {
   detailsData: MovieDetailsTypes,
 }
 export type SearchFieldProps = {
-  currentPage: number
+  currentPage: number;
 }
 export type PaginationProps = {
   totalPages: number,
@@ -139,12 +144,12 @@ export type CommonSliceTypes = {
     email: string,
     password: string
   },
-  isLoggedIn: boolean | null,
 }
 export type MovieSliceTypes = {
   selectedMovieID: number | null,
   movieList: ResponceListType | undefined,
-  isDataLoading: boolean
+  isDataLoading: boolean,
+  selectedMovieTag: string
 }
 export type UserDataTypes = {
   email: string;

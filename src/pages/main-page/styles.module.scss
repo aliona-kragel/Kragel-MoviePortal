@@ -16,3 +16,14 @@
   display: flex;
   justify-content: center;
 }
+.header{
+  display: flex;
+  justify-content: space-between;
+  gap: $--gap-medium;
+}
+
+@media(max-width:768px){
+  .header{
+    flex-direction: column;
+  }
+}

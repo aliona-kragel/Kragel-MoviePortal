@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { API_KEY, BASE_API_URL } from '../constants';
-import { GetMovieDetailsParams, GetMoviesByNameParams, GetMoviesParams, MovieDetailsTypes, MovieStaffTypes, ResponceListType } from '../types/types';
+import { GetMovieDetailsParams, GetMoviesByNameParams, GetMoviesByTypeParams, GetMoviesParams, MovieDetailsTypes, MovieStaffTypes, ResponceListType } from '../types/types';
 
 export const moviesApi = createApi({
   reducerPath: 'api',
@@ -24,9 +24,12 @@ export const moviesApi = createApi({
       query: ({ selectedMovieID }) => `/v1/staff?filmId=${selectedMovieID}`,
     }),
     getMovieByName: builder.query<ResponceListType, GetMoviesByNameParams>({
-      query: ({ searchString }) => `/v2.2/films?keyword=${searchString}`,
+      query: ({ searchString, page }) => `/v2.2/films?keyword=${searchString}&page=${page}`,
+    }),
+    getMovieByType: builder.query<ResponceListType, GetMoviesByTypeParams>({
+      query: ({ type, page }) => `/v2.2/films?type=${type}&page=${page}`,
     })
   })
 });
 
-export const { useGetMoviesQuery, useGetMovieDetailsQuery, useGetStaffDetailsQuery, useGetMovieByNameQuery } = moviesApi;
+export const { useGetMoviesQuery, useGetMovieDetailsQuery, useGetStaffDetailsQuery, useGetMovieByNameQuery, useGetMovieByTypeQuery } = moviesApi;

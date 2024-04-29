@@ -23,7 +23,7 @@ export const MovieCard: FC<PropsWithChildren<MovieCardPrors>> = ({ data }) => {
       cover={
         <img alt={data.nameOriginal}
           src={data.posterUrlPreview}
-          style={{ height: isFullscreen ? 300 : "auto" }} />
+          style={{ height: isFullscreen ? 350 : "auto" }} />
       }
     >
       {hovered && (

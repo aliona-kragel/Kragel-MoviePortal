@@ -4,7 +4,8 @@ import { MovieSliceTypes, ResponceListType } from "../../types/types";
 const initialState: MovieSliceTypes = {
   selectedMovieID: null,
   movieList: undefined,
-  isDataLoading: true
+  isDataLoading: true,
+  selectedMovieTag: "ALL"
 };
 
 const movieSlice = createSlice({
@@ -19,6 +20,9 @@ const movieSlice = createSlice({
     },
     setIsDataLoading: (state, action: PayloadAction<boolean>) => {
       state.isDataLoading = action.payload;
+    },
+    setSelectedMovieTag: (state, action: PayloadAction<string>) => {
+      state.selectedMovieTag = action.payload;
     },
   }
 })
