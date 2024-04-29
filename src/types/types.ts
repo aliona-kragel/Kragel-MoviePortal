@@ -169,3 +169,7 @@ export type FavMovieData = {
 export type LikedMovie = {
   data: FavMovieData
 }
+export type ThemeContextType = {
+  theme: string,
+  toggleTheme: () => void
+}

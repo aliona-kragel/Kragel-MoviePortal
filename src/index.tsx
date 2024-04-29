@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/configure-store';
 import { routes } from './router';
 import { RouterProvider } from 'react-router-dom';
+import { ThemeProvider } from './context/theme-context';
 
 import "./styles/styles.module.scss"
 
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={routes} />
-    </Provider>
+    <ThemeProvider>
+      <Provider store={store}>
+        <RouterProvider router={routes} />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>,
 );
 

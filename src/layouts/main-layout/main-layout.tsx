@@ -1,13 +1,16 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import styles from "./styles.module.scss";
-import { Header } from "../../components/header";
-import { useEffect } from "react";
-import { Paths } from "../../constants";
+import { useContext, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { Header } from "../../components/header";
+import { Paths } from "../../constants";
 import { ErrorFallback } from "../../components/error-fallback";
+import { ThemeContext } from "../../context/theme-context";
+
+import styles from "./styles.module.scss";
 
 export const MainLayout = () => {
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const isLocalhost = "http://localhost:3000/Kragel-MoviePortal";
@@ -19,7 +22,7 @@ export const MainLayout = () => {
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <section className={styles.main}>
+      <section className={`${styles.main} ${styles[theme]}`}>
         <Header />
         <div className={styles.container}>
           <Outlet />
