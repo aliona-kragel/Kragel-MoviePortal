@@ -23,3 +23,9 @@
 .light {
   background: linear-gradient(135deg, #009689, #2d067e);
 }
+
+@media(max-width:768px){
+  .main{
+    padding: 0;
+  }
+}

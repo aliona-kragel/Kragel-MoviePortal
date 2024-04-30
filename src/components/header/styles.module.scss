@@ -22,3 +22,12 @@
     }
   }
 }
+@media(max-width:585px){
+  .header{
+    flex-direction: column-reverse;
+    gap: $--gap-medium;
+    .navigation{
+      justify-content: space-between;
+    }
+  }
+}

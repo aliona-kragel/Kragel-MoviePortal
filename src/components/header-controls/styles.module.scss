@@ -3,3 +3,8 @@
   display: flex;
   gap: $--gap-tiny;
 }
+@media(max-width:585px){
+  .controls{
+    justify-content: flex-end;
+  }
+}

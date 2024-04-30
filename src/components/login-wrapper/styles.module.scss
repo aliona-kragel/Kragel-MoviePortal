@@ -46,11 +46,16 @@
 }
 @media (max-width: 680px) {
   .login {
-    width: 90%;
+    width: 100%;
     padding: 64px 32px;
     :global{
       .ant-menu-horizontal{
         margin-top: 0;
+      }
+    }
+    &__navigation{
+      & > li {
+        font-size: $--font-size-medium;
       }
     }
   }
