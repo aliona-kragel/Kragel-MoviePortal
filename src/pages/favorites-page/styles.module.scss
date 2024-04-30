@@ -1,0 +1,8 @@
+@import "../../styles/variables.scss";
+.favourites{
+  display: flex;
+  min-height: calc(100vh - 180px);
+  width: 100%;
+  flex-direction: column;
+  gap: $--gap-large;
+}

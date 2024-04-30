@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.rate{
+  display: flex;
+  align-items: center;
+  gap:$--gap-medium ;
+  .value{
+    font-family: $--font-family;
+    font-size: $--font-size-medium;
+    color: #373942;
+  }
+}

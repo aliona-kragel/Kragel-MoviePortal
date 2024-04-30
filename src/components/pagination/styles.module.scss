@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.button{
+  background: transparent;
+  outline: none; 
+  border: 1px solid transparent; 
+  min-width: 31px;
+  font-size: $--font-size-default;
+  padding: $--spacing-tiny;
+  border-radius: $--border-radius-tiny;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: $--gap-small;
+}

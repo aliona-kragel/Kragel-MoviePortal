@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+.profile{
+  display: flex;
+  padding: 0;
+  gap: $--gap-medium;
+  .user{
+    display: flex;
+    align-items: center;
+    gap: $--gap-small;
+    .email{
+      font-family: $--font-family;
+      color:$--main-color;
+    }
+  }
+}
+
+@media(max-width:768px){
+  .profile{
+    gap: $--gap-tiny;
+    justify-content: flex-end;
+  }
+}

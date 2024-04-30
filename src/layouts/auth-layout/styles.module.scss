@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.auth {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dark {
+  background: linear-gradient(135deg, rgb(0, 4, 48), rgb(59, 1, 114) 86%);
+}
+.light {
+  background: linear-gradient(135deg, #009689, #2d067e);
+}

@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+.details{
+  width: 100%;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: $--gap-large;
+  .header{
+    display: flex;
+    align-items: center;
+    font-family: $--font-family;
+    gap: $--gap-medium;
+    color: $--main-color;
+    .back{
+      color: $--secondary-color;
+      padding: 0;
+    }
+    .title{
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      font-size: $--font-size-xlarge;
+      color: $--secondary-color;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  .details{
+    .header{
+      .title{
+        font-size: $--font-size-large;
+      }
+    }
+  }
+}
+@media(max-width: 585px){
+  .details{
+    .header{
+      .title{
+        font-size: $--font-size-medium;
+      }
+    }
+  }
+}

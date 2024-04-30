@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+.main{
+  display: flex;
+  min-height: calc(100vh - 180px);
+  width: 100%;
+  flex-direction: column;
+  gap: $--gap-large;
+  :global{
+    .ant-spin-container > .ant-row{
+      margin-right:0 !important;
+      margin-left: 0 !important;
+    }
+  }
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  gap: $--gap-medium;
+}
+
+@media(max-width:768px){
+  .header{
+    flex-direction: column;
+  }
+}

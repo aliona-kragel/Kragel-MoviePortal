@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+.main{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: $--gap-large;
+  align-items: center;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  background: $--background-tranparent-main;
+  box-shadow: $--box-shadow-default;
+  border-radius: $--border-radius-default;
+  padding: 16px;
+}
+.dark {
+  background: linear-gradient(135deg, rgb(0, 4, 48), rgb(59, 1, 114) 86%);
+}
+.light {
+  background: linear-gradient(135deg, #009689, #2d067e);
+}
+
+@media(max-width:768px){
+  .main{
+    padding: 0;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.link{
+  width: 100%;
+  display: flex;
+  font-family: $--font-family;
+  font-size: $--font-size-medium;
+  transition:  border-bottom 0.3s ease-in-out;
+  color: $--secondary-color;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  &:hover{
+    color: $--main-color;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.active{
+  border-bottom: 2px solid $--main-color;
+  color: $--main-color;
+}
+

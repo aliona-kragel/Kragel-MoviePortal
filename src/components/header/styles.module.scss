@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+.header{
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  justify-content: space-between;
+  padding: 16px;
+  backdrop-filter: blur(20px);
+  background: $--background-tranparent-main;
+  box-shadow:$--box-shadow-default;
+  border-radius: $--border-radius-default;
+  .navigation{
+    display: flex;
+    gap: 48px;
+  }
+}
+
+@media(max-width:768px){
+  .header{
+    .navigation{
+      gap: $--gap-xlarge;
+    }
+  }
+}
+@media(max-width:585px){
+  .header{
+    flex-direction: column-reverse;
+    gap: $--gap-medium;
+    .navigation{
+      justify-content: space-between;
+    }
+  }
+}

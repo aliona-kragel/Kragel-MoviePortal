@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.logo{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: $--secondary-color;
+  text-decoration: none;
+  font-size: $--font-size-large;
+}
+
+@media(max-width:768px){
+  .logo{
+    font-size: $--font-size-medium;
+  }
+}
