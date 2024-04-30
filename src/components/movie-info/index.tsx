@@ -9,7 +9,7 @@ import { LikeButton } from "../like-button";
 
 import styles from "./styles.module.scss";
 
-export const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
+const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
   const { selectedMovieID } = useAppSelector(state => state.movie);
   const { data: staffData } = useGetStaffDetailsQuery({ selectedMovieID });
   const { countries, genres, ratingAgeLimits, ratingKinopoisk, ratingImdb, shortDescription, description, posterUrl, year, nameOriginal, nameRu } = detailsData || {};
@@ -105,3 +105,5 @@ export const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
     </div>
   )
 }
+
+export default MovieInfo;

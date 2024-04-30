@@ -1,13 +1,14 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { lazy, Suspense } from 'react';
 import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useAppSelector } from "../../hooks/use-app-selector";
 import { useGetMovieDetailsQuery } from "../../services";
 import { Loader } from "../../components/loader";
-import { MovieInfo } from "../../components/movie-info";
-
 import styles from "./styles.module.scss";
+
+const MovieInfo = lazy(() => import("../../components/movie-info"));
 
 export const DetailsPage: FC = () => {
   const { selectedMovieID } = useAppSelector(state => state.movie);
@@ -28,7 +29,11 @@ export const DetailsPage: FC = () => {
             </Button>
             <h2 className={styles.title}>{detailsData?.nameRu || detailsData?.nameOriginal}</h2>
           </div>
-          {detailsData && <MovieInfo detailsData={detailsData} />}
+          {detailsData &&
+            <Suspense fallback={<Loader />}>
+              <MovieInfo detailsData={detailsData} />
+            </Suspense>
+          }
         </>
       )}
     </section>
