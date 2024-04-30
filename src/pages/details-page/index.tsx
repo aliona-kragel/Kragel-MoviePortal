@@ -5,7 +5,6 @@ import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useAppSelector } from "../../hooks/use-app-selector";
 import { useGetMovieDetailsQuery } from "../../services";
 import { Loader } from "../../components/loader";
-import { Paths } from "../../constants";
 import { MovieInfo } from "../../components/movie-info";
 
 import styles from "./styles.module.scss";

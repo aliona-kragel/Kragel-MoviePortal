@@ -98,19 +98,12 @@ export type MovieStaffTypes = {
   professionText: string,
   professionKey: string
 }
-export type GetMoviesParams = {
-  page: number;
-  limit?: number;
-}
 export type GetMovieDetailsParams = {
   selectedMovieID: number | null
 }
-export type GetMoviesByNameParams = {
-  searchString: string,
-  page: number
-}
-export type GetMoviesByTypeParams = {
-  type: string,
+export type GetMoviesParams = {
+  type?: string,
+  searchString?: string,
   page: number
 }
 export type DefaultModalProps = {
@@ -126,8 +119,14 @@ export type MovieCardPrors = {
 export type MovieInfoProps = {
   detailsData: MovieDetailsTypes,
 }
+export type MovieListProps = {
+  searchString: string,
+  type: string,
+  page: number,
+}
 export type SearchFieldProps = {
-  currentPage: number;
+  searchString: string,
+  setSearchString: Dispatch<SetStateAction<string>>
 }
 export type PaginationProps = {
   totalPages: number,

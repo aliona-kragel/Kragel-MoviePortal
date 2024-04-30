@@ -1,26 +1,19 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import CheckableTag from "antd/lib/tag/CheckableTag";
 import useMovieActions from "../../hooks/use-movie-actions";
 import { useAppSelector } from "../../hooks/use-app-selector";
-import { SearchFieldProps } from "../../types/types";
-import { useGetMovieByTypeQuery } from "../../services";
 import { allowedFilterList } from "../../helpers";
 
 import styles from "./styles.module.scss";
 
-export const TagFilter: FC<SearchFieldProps> = ({ currentPage }) => {
-  const { setSelectedMovieTag, setIsDataLoading, setMovieList } = useMovieActions()
+export const TagFilter: FC = () => {
+  const { setSelectedMovieTag } = useMovieActions();
   const { selectedMovieTag } = useAppSelector(state => state.movie);
-  const { data, isLoading } = useGetMovieByTypeQuery({ type: selectedMovieTag, page: currentPage });
 
   const handleChange = (tagName: string, checked: boolean) => {
-    checked ? setSelectedMovieTag(tagName) : setSelectedMovieTag("ALL");
+    const tagValue = checked ? tagName : "ALL"
+    setSelectedMovieTag(tagValue);
   };
-
-  useEffect(() => {
-    setIsDataLoading(isLoading);
-    setMovieList(data);
-  }, [data, isLoading])
 
   return (
     <div className={styles.filter}>
