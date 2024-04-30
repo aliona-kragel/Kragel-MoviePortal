@@ -13,7 +13,10 @@ export const LikeButton: FC<LikedMovie> = ({ data }) => {
   const navigate = useNavigate();
 
   const toggleLike = () => {
-    if (!token) navigate(Paths.AUTH);
+    if (!token) {
+      navigate(Paths.AUTH);
+      return
+    }
 
     if (isLiked) {
       const updatedFavorites = favorites.filter((movie) => movie.id !== data.id);
