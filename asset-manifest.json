@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Kragel-MoviePortal/static/css/main.56757b56.css",
-    "main.js": "/Kragel-MoviePortal/static/js/main.3dad299a.js",
-    "static/css/799.559d772c.chunk.css": "/Kragel-MoviePortal/static/css/799.559d772c.chunk.css",
-    "static/js/799.049005d7.chunk.js": "/Kragel-MoviePortal/static/js/799.049005d7.chunk.js",
-    "static/css/931.00012afe.chunk.css": "/Kragel-MoviePortal/static/css/931.00012afe.chunk.css",
-    "static/js/931.af9933b2.chunk.js": "/Kragel-MoviePortal/static/js/931.af9933b2.chunk.js",
+    "main.css": "/Kragel-MoviePortal/static/css/main.7b8dbad9.css",
+    "main.js": "/Kragel-MoviePortal/static/js/main.3660e4f5.js",
+    "static/css/799.e7fef923.chunk.css": "/Kragel-MoviePortal/static/css/799.e7fef923.chunk.css",
+    "static/js/799.abab1ace.chunk.js": "/Kragel-MoviePortal/static/js/799.abab1ace.chunk.js",
+    "static/css/931.3368a1db.chunk.css": "/Kragel-MoviePortal/static/css/931.3368a1db.chunk.css",
+    "static/js/931.18058995.chunk.js": "/Kragel-MoviePortal/static/js/931.18058995.chunk.js",
     "index.html": "/Kragel-MoviePortal/index.html",
-    "main.56757b56.css.map": "/Kragel-MoviePortal/static/css/main.56757b56.css.map",
-    "main.3dad299a.js.map": "/Kragel-MoviePortal/static/js/main.3dad299a.js.map",
-    "799.559d772c.chunk.css.map": "/Kragel-MoviePortal/static/css/799.559d772c.chunk.css.map",
-    "799.049005d7.chunk.js.map": "/Kragel-MoviePortal/static/js/799.049005d7.chunk.js.map",
-    "931.00012afe.chunk.css.map": "/Kragel-MoviePortal/static/css/931.00012afe.chunk.css.map",
-    "931.af9933b2.chunk.js.map": "/Kragel-MoviePortal/static/js/931.af9933b2.chunk.js.map"
+    "main.7b8dbad9.css.map": "/Kragel-MoviePortal/static/css/main.7b8dbad9.css.map",
+    "main.3660e4f5.js.map": "/Kragel-MoviePortal/static/js/main.3660e4f5.js.map",
+    "799.e7fef923.chunk.css.map": "/Kragel-MoviePortal/static/css/799.e7fef923.chunk.css.map",
+    "799.abab1ace.chunk.js.map": "/Kragel-MoviePortal/static/js/799.abab1ace.chunk.js.map",
+    "931.3368a1db.chunk.css.map": "/Kragel-MoviePortal/static/css/931.3368a1db.chunk.css.map",
+    "931.18058995.chunk.js.map": "/Kragel-MoviePortal/static/js/931.18058995.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.56757b56.css",
-    "static/js/main.3dad299a.js"
+    "static/css/main.7b8dbad9.css",
+    "static/js/main.3660e4f5.js"
   ]
 }
