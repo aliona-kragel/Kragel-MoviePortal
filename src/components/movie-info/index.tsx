@@ -78,7 +78,7 @@ const MovieInfo: FC<MovieInfoProps> = ({ detailsData }) => {
           src={posterUrl}
           alt={nameOriginal}
         />
-        <Rating rating={ratingKinopoisk || ratingImdb} count={10} value={ratingKinopoisk || ratingImdb} />
+        <div className={styles.rating}> <Rating rating={ratingKinopoisk || ratingImdb} count={10} value={ratingKinopoisk || ratingImdb} /></div>
         <LikeButton data={favMovieData} />
       </div>
       <div className={styles.resume}>

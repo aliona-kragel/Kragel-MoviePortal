@@ -34,7 +34,7 @@ export const MovieList: FC<MovieListProps> = ({ searchString, type, page }) => {
     <List className={styles.cards}
       grid={{ gutter: REQUEST_LIMIT, xs: 1, sm: 2, md: 3, lg: 4, xl: 5, xxl: 5, }}
       dataSource={movieList?.items}
-      locale={{ emptyText: <EmptyBlock /> }}
+      locale={{ emptyText: <EmptyBlock message={"По вашему запросу ничего не найдено"} /> }}
       renderItem={(item) => (
         <List.Item onClick={() => handleCardClick(item)}>
           <MovieCard key={item.kinopoiskId} data={item} />

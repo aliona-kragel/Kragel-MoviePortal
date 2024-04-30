@@ -172,3 +172,6 @@ export type ThemeContextType = {
   theme: string,
   toggleTheme: () => void
 }
+export type EmptyBlockProps = {
+  message: string
+}

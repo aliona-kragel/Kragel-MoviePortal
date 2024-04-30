@@ -51,3 +51,36 @@
     }
   }
 }
+
+@media(max-width: 768px){
+  .info{
+    flex-direction: column;
+    .poster{
+      .img, .rating{
+        margin: 0 auto;
+      }
+    }
+    .resume{
+      .row{
+        &__name{
+          font-size: $--font-size-default;
+        }
+      }
+      .desc {
+        p{
+          font-size: $--font-size-default;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 380px){
+  .info{
+    .poster{
+      .img{
+        width: 100%;
+      }
+    }
+  }
+}

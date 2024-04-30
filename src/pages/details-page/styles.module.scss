@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     font-family: $--font-family;
+    gap: $--gap-medium;
     color: $--main-color;
     .back{
       color: $--secondary-color;
@@ -22,6 +23,25 @@
       justify-content: center;
       font-size: $--font-size-xlarge;
       color: $--secondary-color;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  .details{
+    .header{
+      .title{
+        font-size: $--font-size-large;
+      }
+    }
+  }
+}
+@media(max-width: 585px){
+  .details{
+    .header{
+      .title{
+        font-size: $--font-size-medium;
+      }
     }
   }
 }

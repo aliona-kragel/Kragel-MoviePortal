@@ -13,7 +13,7 @@ import styles from "./styles.module.scss";
 
 const FavoritesList: FC = () => {
   const { setSelectedMovie } = useMovieActions();
-  const { isFullscreen } = useWindowResize()
+  const { width, isFullscreen } = useWindowResize()
   const favoritesJSON = localStorage.getItem(FAVORITES);
   const { theme } = useContext(ThemeContext);
   const favorites: FavMovieData[] = favoritesJSON ? JSON.parse(favoritesJSON) : [];
@@ -24,12 +24,13 @@ const FavoritesList: FC = () => {
     navigate(Paths.DETAILS);
   };
 
-  return (
+  const hasFavorites = favorites.length > 0;
+
+  return (hasFavorites ?
     <List
       className={styles.list}
       itemLayout="horizontal"
       dataSource={favorites}
-      locale={{ emptyText: <EmptyBlock /> }}
       pagination={{
         pageSize: isFullscreen ? 10 : 6,
         align: "center"
@@ -37,6 +38,7 @@ const FavoritesList: FC = () => {
       renderItem={(data) => (
         <List.Item
           onClick={() => handleCardClick(data)}
+          style={{ backgroundColor: "rgb(255, 255, 255, 0.1)", borderRadius: 4 }}
         >
           <List.Item.Meta
             avatar={
@@ -46,10 +48,10 @@ const FavoritesList: FC = () => {
                 src={data.poster}
               />
             }
-            title={<p style={{ color: theme === "light" ? "#262626" : "white", fontSize: 24 }}>{data.name}</p>}
+            title={<p style={{ color: theme === "light" ? "#262626" : "white", fontSize: width <= 768 ? 16 : 24 }}>{data.name}</p>}
             description={
               <>
-                <p style={{ marginBottom: "4px", color: "#c3c3c3" }}>{data.desc}</p>
+                {width <= 768 ? <></> : <p style={{ marginBottom: "4px", color: "#c3c3c3" }}>{data.desc}</p>}
                 <Rating rating={data.rating} count={5} value={data.rating / 2} />
               </>
             }
@@ -57,6 +59,7 @@ const FavoritesList: FC = () => {
         </List.Item>
       )}
     />
+    : <EmptyBlock message={"Список избранных пуст"} />
   )
 }
 
